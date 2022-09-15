@@ -1,0 +1,19 @@
+.card{
+    border: solid 2px black;
+    border-radius: 0.4rem;
+}
+
+img{
+    width: 100%;
+    height: 75%;
+    border-bottom: solid 2px black;
+}
+
+p{
+    text-align: center;
+}
+
+.progressBar{
+    background-color: white;
+    border-radius: 0;
+}

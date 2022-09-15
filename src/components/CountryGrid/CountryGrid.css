@@ -1,0 +1,12 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    max-width: max-content;
+}
+
+.pageNumber {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+}
