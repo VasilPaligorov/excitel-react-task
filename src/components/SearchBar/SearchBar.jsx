@@ -1,16 +1,24 @@
 import React from 'react';
 import { getCountries } from '../../service/getData';
 
-export default function SearchBar({setCountries}) {
+export default function SearchBar({ setCountries }) {
 
-  function onInput(event){
-    setTimeout(async()=>{
-      const newCountries = await getCountries(event.target.value);
-      setCountries(newCountries);
-    }, 2000);
+  async function onInput(event) {
+    const newCountries = await getCountries(event.target.value);
+    setCountries(newCountries);
+  }
+
+  const debounce = (func, delay) => {
+    let debounceTimer;
+    return function () {
+      const context = this;
+      const args = arguments;
+      clearTimeout(debounceTimer);
+      debounceTimer= setTimeout(() => func.apply(context, args), delay);
+    }
   }
 
   return (
-    <input placeholder='Enter country name' type="text" onInput={(e)=>onInput(e)}/>
+    <input placeholder='Enter country name' type="text" onInput={debounce((e) => onInput(e), 1000)} />
   )
 }

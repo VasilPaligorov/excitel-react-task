@@ -17,7 +17,7 @@ export default function CountryCard({ country }) {
 
   function interval() {
     if (progress <= 100) {
-      const newProgress = progress + 25;
+      const newProgress = progress + 100  ;
       setProgress(newProgress);
       console.log(progress);
     } else { clearInterval(intervalId); }
