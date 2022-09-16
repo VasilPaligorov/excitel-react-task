@@ -4,3 +4,11 @@
   margin: 0.5rem;
   gap: 2rem;
 }
+
+#root{
+  background-color: #f6f6f6;
+}
+
+html{
+  background-color: #f6f6f6;
+}

@@ -1,0 +1,17 @@
+.searchBar{
+    display: flex;
+    justify-content: space-between;
+    max-width: 90vw;
+    margin: auto;
+}
+
+input{
+    min-width: 30vw;
+}
+
+.dropdown-toggle{
+    background-color: white !important;
+    color: black !important;
+    border: 1px black solid !important;
+    border-radius: 0.4rem !important;
+}
