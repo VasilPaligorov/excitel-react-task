@@ -13,8 +13,8 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/*' element={<Navigate replace to="/" />} />
-          <Route path='/autocomplete' element={<Autocomplete />} />
           <Route path='/' element={<CountryGrid />} />
+          <Route path='/autocomplete' element={<Autocomplete />} />
         </Routes>
       </BrowserRouter>
     </div>

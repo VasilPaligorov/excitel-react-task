@@ -17,6 +17,10 @@ p{
     overflow: hidden;
 }
 
+.countryName{
+    border: 0;
+}
+
 .progressBar{
     background-color: white;
     border-radius: 0;

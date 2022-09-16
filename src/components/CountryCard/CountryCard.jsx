@@ -16,10 +16,9 @@ export default function CountryCard({ country, sortByCapital }) {
   }
 
   function interval() {
-    if (progress < 100) {
+    if (progress < 100) 
       setProgress(prev => prev + 1);
-      console.log(progress);
-    } else
+    else
       clearInterval(intervalId);
   }
 
@@ -38,9 +37,9 @@ export default function CountryCard({ country, sortByCapital }) {
         onMouseLeave={() => closeModal()}
       >
         <img src={country.flag} alt='country flag' />
-        <p>{country.name}</p>
+        <p className='countryName'>{country.name}</p>
         {sortByCapital ?
-          <p>Capital: {country.capitalName}</p>
+          <p>Capital: {country.capitalName?country.capitalName:"-"}</p>
           : <></>
         }
         <ProgressBar animated className='progressBar' now={progress} />

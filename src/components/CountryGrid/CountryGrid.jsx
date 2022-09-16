@@ -28,20 +28,18 @@ export default function CountryGrid() {
   }
 
   function changeSort() {
-    if (sortByCapital) {
-      setCountries(countries.sort((a, b) => a.capitalName.localeCompare(b.capitalName)));
-      changePage(1);
-    }
-    else {
-      setCountries(countries.sort((a, b) => a.name.localeCompare(b.name)));
-      changePage(1);
-    }
+    let sortBy;
+    sortByCapital ?
+      sortBy = 'capitalName' :
+      sortBy = 'name';
 
+    setCountries(countries.sort((a, b) => a[sortBy].localeCompare(b[sortBy])));
+    changePage(1);
   }
 
   function changePage(newNumber) {
     const lastPage = Math.ceil(countries.length / countriesNumberPerPage);
-    
+
     if (newNumber >= 1 && newNumber < countries.length / countriesNumberPerPage) {
       setPageNumber(newNumber);
       const newCountries = countries.slice((newNumber - 1) * countriesNumberPerPage, newNumber * countriesNumberPerPage);
@@ -53,9 +51,12 @@ export default function CountryGrid() {
     }
 
     window.scrollTo(0, 0);
-    
-    if (newNumber === 1)
+
+    if (newNumber === 1) {
       setIsFirst(true);
+      if (newNumber === lastPage)
+        setIsLast(true);
+    }
     else if (newNumber === lastPage)
       setIsLast(true);
     else {

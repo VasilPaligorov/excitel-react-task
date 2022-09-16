@@ -13,11 +13,11 @@ export default function CountryModal({ country, countryModalIsOpen, setCountryMo
         <BsXLg onClick={() => setCountryModalOpen(false)} />
       </div>
       <div className='content'>
-        <img src={country.flag} alt='country flag'/>
+        <img src={country.flag} alt='country flag' />
         <p>Code: {country.code}</p>
-        <p>Capital: {country.capitalName}</p>
-        <p>Latitude: {country.latLng[0]}</p>
-        <p>Longitude: {country.latLng[1]}</p>
+        <p>Capital: {country.capitalName ? country.capitalName : "-"}</p>
+        <p>Latitude: {country.latLng[0] ? country.latLng[0] : "-"}</p>
+        <p>Longitude: {country.latLng[1] ? country.latLng[1] : "-"}</p>
       </div>
     </Modal>
   )
